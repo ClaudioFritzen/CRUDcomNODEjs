@@ -1,13 +1,11 @@
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
+
+require('dotenv').config('')
 
 
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-
-
-
-
-const DB_USER = 'claudiiofritzen'
-const DB_PASSWORD = encodeURIComponent('5SCMkMHLmjpRiCe9')
+const DB_USER = process.env.DB_USER
+const DB_PASSWORD = process.env.DB_PASSWORD  
 
 mongoose
     .connect(
@@ -22,5 +20,3 @@ mongoose
     console.log(err)
     
 })
-
-//module.exports = Banco
